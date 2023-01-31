@@ -41,6 +41,23 @@
 	            background-image:url(../IMG/fondo2.jpeg);
             }
         </style>
+
+        <script>
+            function agregarFila() {
+            document.getElementById("table").insertRow(-1).innerHTML = '<tr style="background-color:#F0FFFF;"><td><input type="text" style="width:150px;"></td><td><input type="number" style="width:80px;"></td></tr>';
+            }
+
+            function eliminarFila() {
+                    var table = document.getElementById("table");
+                    var rowCount = table.rows.length;
+                    //console.log(rowCount);
+                    if (rowCount <= 1)
+                        alert('No se puede eliminar esta fila');
+                    else
+                        table.deleteRow(rowCount - 1);
+                }
+        </script>
+
             <div class="container mt-5" >
                     <div class="row"> 
                         
@@ -51,7 +68,7 @@
                                     <input type="hidden" class="form-control mb-3" name="id" placeholder="id" >
                                     <input type="date" class="form-control mb-3" name="fecha" value="<?php echo $fcha;?>" readonly>
                                     <input type="time" class="form-control mb-3" name="hora" placeholder="Hora" value="<?php echo $hora;?>" readonly >
-                                    <select class="form-control mb-3" name="nombre">
+                                    <!--<select class="form-control mb-3" name="nombre">
                                         <option value="" disabled selected>Selecciona insumo</option>
                                         <option value="Arena">Arena</option>
                                         <option value="Graba">Graba</option>
@@ -59,7 +76,27 @@
                                         <option value="Tierra">Tierra</option>
                                         <option value="Piedra">Piedra</option>
                                     </select>
-                                    <input type="number" class="form-control mb-3" name="precio" placeholder="Precio">
+                                    <input type="number" class="form-control mb-3" name="precio" placeholder="Precio">-->
+                                    <div class="row">
+                                        <table class="table table-bordered" id="table" >
+                                            <tr style="background-color:#ADD8E6">
+
+                                                <th>Producto </th>
+                                                <th>Precio</th>
+                                            </tr>
+
+                                            <tr style="background-color:#F0FFFF;">
+                                                <td><input type="text" style="width:150px;"></td>
+                                                <td><input type="number" style="width:80px;"></td>
+                                            </tr>
+
+                                            </table>
+                                            <button type="button"  class="btn btn-primary" style="width:100px; background-color: #00008B;" onclick="agregarFila()">Agrega</button>
+                                            <button type="button"  class="btn btn-primary" style="width:150px; background-color: #00008B;" onclick="eliminarFila()">Borrar</button> 
+                                            
+                                    </div>
+                                    <br><br>
+
                                     <select class="form-control mb-3" name="responsable">
                                         <option value="" disabled selected>Selecciona Responsable</option>
                                         <option value="Rene">Rene</option>
@@ -85,6 +122,7 @@
                                         <th>Nombre de Cliente</th>
                                         <th></th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
 
@@ -101,7 +139,8 @@
                                                 <th><?php  echo $row['responsable']?></th>
                                                 <th><?php  echo $row['ncliente']?></th>
                                                 <th><a href="actualizar.php?id_venta=<?php echo $row['id_venta'] ?>"><i class='bx bx-message-square-edit bx-sm' style="color: #00008B;"></i></a></th>
-                                                <th><a href="delete.php?id_venta=<?php echo $row['id_venta'] ?>"><i class='bx bx-message-square-x bx-sm' style="color: #00008B;"></i></a></th>                                        
+                                                <th><a href="delete.php?id_venta=<?php echo $row['id_venta'] ?>"><i class='bx bx-message-square-x bx-sm' style="color: #00008B;"></i></a></th>
+                                                <th><a href="pdf.php"><i class='bx bx-printer' style="color: #00008B;"></i></a></th>                                        
                                             </tr>
                                         <?php 
                                             }
