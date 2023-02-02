@@ -9,9 +9,8 @@ $hora=$_POST['hora'];
 $nombre=$_POST['nombre'];
 $precio=$_POST['precio'];
 $responsable=$_POST['responsable'];
-$ncliente=$_POST['ncliente'];
 
-$sql="UPDATE ventas SET  fecha='$fecha',hora='$hora',nombre='$nombre',precio='$precio',responsable='$responsable',ncliente='$ncliente' WHERE id_venta='$id_venta'";
+$sql="UPDATE ventas SET  fecha='$fecha',hora='$hora',nombre='$nombre',precio='$precio',responsable='$responsable' WHERE id_venta='$id_venta'";
 $query=mysqli_query($con,$sql);
 
     if($query){
