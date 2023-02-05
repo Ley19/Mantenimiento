@@ -8,7 +8,7 @@
 
 ?>
 
-<?php include("./layout/layout.php"); ?>
+<?php include("./LAYOUT/layout.php"); ?>
 
 <head><title>Historial</title></head>
 <body>
@@ -19,15 +19,14 @@
             <table class="table table-striped">
                 <thead style="background-color:#ADD8E6;" >
                     <tr>
-                        <th>ID</th>
+                        <th>N° Venta</th>
+                        <th>Cliente</th>
                         <th>Fecha</th>
                         <th>Hora</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Responsable</th>
-                        <th>Nombre de Cliente</th>
-                        <th></th>
-                        <th></th>
+                        <th>Concepto</th>
+                        <th>Total</th>
+                        <th>Detalles</th>
+                        <th>Factura</th>
                     </tr>
                 </thead>
 
@@ -38,14 +37,13 @@
 
                     <tr>
                         <th><?php  echo $row['id_venta']?></th>
+                        <th><?php  echo $row['idCliente']?></th>
                         <th><?php  echo $row['fecha']?></th>
                         <th><?php  echo $row['hora']?></th>
-                        <th><?php  echo $row['nombre']?></th>  
-                        <th><?php  echo $row['precio']?></th>
-                        <th><?php  echo $row['responsable']?></th>
-                        <th><?php  echo $row['ncliente']?></th>
-                        <th><a href="delete.php?id_venta=<?php echo $row['id_venta'] ?>"><i class='bx bx-message-square-x bx-sm' style="color: #00008B;"></i></a></th>
-                        <th><a href="factura.php"><i class='bx bx-printer' style="color: #00008B;"></i></a></th>                                        
+                        <th><?php  echo $row['idProducto']?></th>
+                        <th><?php  echo $row['total']?></th>
+                        <th><a href="detallesVentas.php?id_venta=<?php echo $row['id_venta'] ?>"><i class="bi bi-file-text" style="color: #00008B;"></i></a></th>   
+                        <th><a href="FPDF/factura.php?id_venta=<?php echo $row['id_venta']; ?>"><i class='bx bx-printer' style="color: #00008B;"></i></a></th>                                    
                     </tr>
                     <?php 
                         }

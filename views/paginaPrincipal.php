@@ -9,11 +9,11 @@
 
     
     $fcha = date("Y-m-d");
-    ini_set('date.timezone','America/Bogota');
+    ini_set('date.timezone','America/Mexico_City');
     $hora=date("H:i:s");
 ?>
 
-<?php include("./layout/layout.php"); ?>
+<?php include("./LAYOUT/layout.php"); ?>
 
 <head><title>Pagina principal</title></head>
 
@@ -66,4 +66,3 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 </body>
-  

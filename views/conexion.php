@@ -3,8 +3,7 @@ function conectar(){
     $host="localhost";
     $user="root";
     $pass="";
-
-    $bd="m_santillan";
+    $bd="proyectomantenimiento";
 
     $conexion=mysqli_connect($host,$user,$pass);
 

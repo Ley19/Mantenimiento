@@ -8,25 +8,36 @@
 
 ?>
 
-<?php include("./layout/layout.php"); ?>
+
+<?php include("./LAYOUT/layout.php"); ?>
 
 <head><title>Clientes</title></head>
+
 <body>
 
-    <header class="masthead" style="box-sizing: border-box;" >
+    <!--JavaScript-->
+    <script>
+        
+    </script>
+
+    <header class="masthead" >
+    <div class="container mt-5">
         <div class="row"> 
             <div class="col-md-3">
-                <h3>Cliente nuevo</h3>
+                <h3>Nuevo cliente</h3>
+                    <form action="insertarClientes.php" method="POST">
 
-                    <form action="insertarCliente.php" method="POST">
-                        <input type="hidden" name="id_cliente" value="">
-                        <input type="text" class="form-control mb-3" name="Nombre" placeholder="Nombre">
-                        <input type="text" class="form-control mb-3" name="Apellidos" placeholder="Apellidos">
-                        <input type="text" class="form-control mb-3" name="Direccion" placeholder="Direccion">
-                        <input type="text" class="form-control mb-3" name="Correo" placeholder="Correo">
-                        <input type="number" class="form-control mb-3" name="Telefono" placeholder="Telefono">
-
-                    <input value=Guardar type="submit" class="btn btn-primary" style="background-color: #00008B;">
+                        <input type="hidden" class="form-control mb-3" name="id_cliente" placeholder="cod estudiante">
+                        <label for="nombre">Nombre Completo: </label>
+                        <input type="text" class="form-control mb-3" name="nombre" placeholder="nombre">
+                        <label for="apellidos">Apellidos: </label>
+                        <input type="text" class="form-control mb-3" name="apellidos" placeholder="apellidos">
+                        <label for="direccion">Dirreccion: </label>
+                        <input type="text" class="form-control mb-3" name="direccion" placeholder="direccion">
+                        <label for="telefono">Telefono: </label>
+                        <input type="number" class="form-control mb-3" name="telefono" placeholder="telefono">
+                                    
+                        <input type="submit" class="btn btn-primary">
                     </form>
             </div>
 
@@ -34,32 +45,33 @@
                 <table class="table" >
                     <thead class="table-success table-striped" >
                         <tr>
-                            <td>Nombre</td>
-                            <td>Apellidos</td>
-                            <td>Dirección</td>
-                            <td>Correo</td>
-                            <td>Telefono</td>
+                            <th>NCliente</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Dirección</th>
+                            <th>Telefono</th>
+                            <th></th>
                         </tr>
                     </thead>
 
-                    <tbody>
-                            <?php
-                                while($row=mysqli_fetch_array($query)){
-                            ?>
-                                <tr>
-                                    <td><?php  echo $row['Nombre']?></td>
-                                    <td><?php  echo $row['Apellidos']?></td>
-                                    <td><?php  echo $row['Direccion']?></td>
-                                    <td><?php  echo $row['Correo']?></td>    
-                                    <td><?php  echo $row['Telefono']?></td>                                      
-                                </tr>
-                            <?php 
-                                }
-                            ?>
-                     </tbody>
+                    <tbody style="background-color:#F0FFFF;">
+                        <?php
+                            while($row=mysqli_fetch_array($query)){
+                        ?>
+                            <tr>
+                                <th><?php  echo $row['id_cliente']?></th>
+                                <th><?php  echo $row['nombre']?></th>
+                                <th><?php  echo $row['apellidos']?></th>
+                                <th><?php  echo $row['direccion']?></th>    
+                                <th><?php  echo $row['telefono']?></th>
+                                <th><a href="deleteCliente.php?id_cliente=<?php echo $row['id_cliente'] ?>" ><i class='bx bx-message-square-x bx-sm' style="color: #00008B;"></i></a></th>                                        
+                            </tr>
+                        <?php 
+                            }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
     </header>
 </body>
-  

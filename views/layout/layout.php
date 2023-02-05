@@ -5,14 +5,14 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/menu.css" rel="stylesheet">
+        <link href="../CSS/menu.css" rel="stylesheet">
+        <link href="CSS/styles.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
         <!--Boostrap-->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Materiales Santillan" />
+        <meta name="author" content="Leylani Y Luis" />
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap Icons-->
@@ -22,8 +22,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
     <!-- Navegacion-->
@@ -43,6 +41,5 @@
             </div>
         </nav>
     </div>
-
     </body>
 </html>
